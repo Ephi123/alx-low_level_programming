@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 /**
  * main - Entry point
  *
@@ -6,15 +7,7 @@
  */
 int main(void)
 {
-char array[58] = {'a', 'n', 'd', ' ', 't', 'h', 'a', 't', ' ', 'p', 'i', 'e', 
-'c', 'e',' ', 'o', 'f', ' ', 'a', 'r', 't', ' ', 'i', 's', ' ', 'u', 's', 'e', 
-'f', 'u','l', '"', ' ', '-', ' ', 'D', 'o', 'r', 'a', ' ', 'K', 'o', 'r', 'p', 
-'a', 'r',',', ' ', '2', '0', '1', '5', '-', '1', '0', '-', '1', '9'};
-int i;
-for (i = 0; i <= 57; i++)
-{
-putchar(array[i]);
-}
+write(1, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
 return (1);
 }
 
