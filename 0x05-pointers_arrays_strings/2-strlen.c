@@ -10,7 +10,7 @@ int n;
 while (*s != '\0')
 {
 n += 1;
-*s++;
+*s =  *s + 1;
 }
-return (len);
+return (n);
 }
