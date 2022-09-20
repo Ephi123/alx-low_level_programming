@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string>
+#include <string.h>
 /**
  * print_rev -> print sting
  * @s: a paramter
