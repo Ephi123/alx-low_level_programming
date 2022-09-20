@@ -18,6 +18,6 @@ for (i = 0; i <= len1 / 2; len1++)
 temp = s[i];
 s[i] = s[len2];
 s[len2] = temp;
-len2 - = 1;
+len2 -= 1;
 }
 }
