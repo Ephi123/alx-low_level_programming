@@ -1,11 +1,14 @@
 #include "main.h"
+#include <string>
 /**
  * _puts -> print sting
  * @str: a paramter
  */
 void _puts(char *str)
 {
-for (; *str != '\0'; str++)
+int len = strlen(str);
+int i;
+for (; str <= len; str++)
 {
 _putchar(*str);
 }
