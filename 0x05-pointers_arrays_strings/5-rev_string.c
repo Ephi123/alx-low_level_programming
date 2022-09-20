@@ -12,7 +12,7 @@ len = strlen(s);
 for (i = 0; i <= len; len--)
 {
 _putchar(s[len]);
+s[len] = '\0';
 }
-s = null;
 _putchar('\n');
 }
