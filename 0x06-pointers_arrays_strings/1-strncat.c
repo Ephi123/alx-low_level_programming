@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 /**
  * _strncat -> string concatination with fixed number
  * @dest: destination
