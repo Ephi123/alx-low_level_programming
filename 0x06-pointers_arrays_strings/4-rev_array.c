@@ -6,31 +6,11 @@
  */
 void reverse_array(int *a, int n)
 {
-int last = 12;
-int i = 0;
-while (i <= last)
+int tmp, index;
+for (index = n - 1; index >= n / 2; index--)
 {
-if (last != n - 1)
-putchar(',');
-putchar(' ');
-print_number(a[last]);
-last--;
+tmp = a[n - 1 - index];
+a[n - 1 - index] = a[index];
+a[index] = tmp;
 }
-putchar('\n');
-}
-/**
- * print_number - function to conver integer to charcter
- * @n: integer
- */
-void print_number(int n)
-{
-unsigned int num = n;
-if (n < 0)
-{
-putchar('-');
-num = -num;
-}
-if ((num / 10) > 0)
-print_number(num / 10);
-putchar((num % 10) + '0');
 }
