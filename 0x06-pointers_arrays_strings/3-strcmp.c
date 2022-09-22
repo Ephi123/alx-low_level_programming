@@ -7,8 +7,5 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-int res;
-if (s1[0] && s2[0] != '\0')
-res = s1[0] - s2[0];
-return (res);
+return (*s1 - *s);
 }
