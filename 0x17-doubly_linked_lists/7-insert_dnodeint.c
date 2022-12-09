@@ -1,45 +1,55 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "lists.h"
 
 /**
- * main - generate a key depending on a username for crackme5
- * @argc: number of arguments passed
- * @argv: arguments passed to main
+ * insert_dnodeint_at_index - Add node at nth index
  *
- * Return: 0 on success, 1 on error
+ * @h: Head of node
+ *
+ * @idx: index
+ *
+ * @n: struct int
+ *
+ * Return: dlistint_t
  */
-int main(int argc, char *argv[])
-{
-	unsigned int i, b;
-	size_t len, add;
-	char *l = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
-	char p[7] = "      ";
 
-	if (argc != 2)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+{
+	dlistint_t *new_node = malloc(sizeof(dlistint_t));
+	dlistint_t *current;
+	unsigned int count = 0;
+
+	if (h == NULL || new_node == NULL)
 	{
-		printf("Correct usage: ./keygen5 username\n");
-		return (1);
+		return (NULL);
 	}
-	len = strlen(argv[1]);
-	p[0] = l[(len ^ 59) & 63];
-	for (i = 0, add = 0; i < len; i++)
-		add += argv[1][i];
-	p[1] = l[(add ^ 79) & 63];
-	for (i = 0, b = 1; i < len; i++)
-		b *= argv[1][i];
-	p[2] = l[(b ^ 85) & 63];
-	for (b = argv[1][0], i = 0; i < len; i++)
-		if ((char)b <= argv[1][i])
-			b = argv[1][i];
-	srand(b ^ 14);
-	p[3] = l[rand() & 63];
-	for (b = 0, i = 0; i < len; i++)
-		b += argv[1][i] * argv[1][i];
-	p[4] = l[(b ^ 239) & 63];
-	for (b = 0, i = 0; (char)i < argv[1][0]; i++)
-		b = rand();
-	p[5] = l[(b ^ 229) & 63];
-	printf("%s\n", p);
-	return (0);
+	new_node->n = n;
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	current = *h;
+
+	if (idx == 0)
+	{
+		new_node = add_dnodeint(h, n);
+		return (new_node);
+	}
+	while (current)
+	{
+		if (current->next == NULL && count == idx - 1)
+		{
+			new_node = add_dnodeint_end(h, n);
+			return (new_node);
+		}
+		else if ((idx - 1) == count)
+		{
+			new_node->next = current->next;
+			new_node->prev = current;
+			current->next->prev = new_node;
+			current->next = new_node;
+			return (new_node);
+		}
+		count++;
+		current = current->next;
+	}
+	free(new_node);
+	return (NULL);
 }
