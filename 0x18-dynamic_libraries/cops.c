@@ -4,7 +4,9 @@
  * Return: a + b
  */
 int add(int a, int b)
+{
   return a + b;
+}
 
 /**
  *sub - perform subtraction
@@ -12,7 +14,9 @@ int add(int a, int b)
  * Return: a - b
  */
 int sub(int a, int b)
+{
   return a - b;
+}
 
 /**
  *mul - perform multiplication
@@ -20,7 +24,9 @@ int sub(int a, int b)
  * Return: a - b
  */
 int mul(int a, int b)
+{
   return a * b;
+}
 
 /**
  *div - perform div
@@ -28,7 +34,9 @@ int mul(int a, int b)
  * Return: a / b
  */
 int div(int a, int b)
+}
   return a / b;
+}
 
 /**
  *mod - perform mod
@@ -36,7 +44,9 @@ int div(int a, int b)
  * Return: a - b
  */
 int mod(int a, int b)
+}
   return a % b;
+}
   
 
   
