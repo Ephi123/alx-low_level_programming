@@ -3,7 +3,7 @@
  *
  * Return: a + b
  */
-int add(a, b)
+int add(int a, int b)
   return a + b;
 
 /**
@@ -11,7 +11,7 @@ int add(a, b)
  *
  * Return: a - b
  */
-int sub(a, b)
+int sub(int a, int b)
   return a - b;
 
 /**
@@ -19,7 +19,7 @@ int sub(a, b)
  *
  * Return: a - b
  */
-int mul(a, b)
+int mul(int a, int b)
   return a * b;
 
 /**
@@ -27,7 +27,7 @@ int mul(a, b)
  *
  * Return: a / b
  */
-int div(a, b)
+int div(int a, int b)
   return a / b;
 
 /**
@@ -35,7 +35,7 @@ int div(a, b)
  *
  * Return: a - b
  */
-int mod(a, b)
+int mod(int a, int b)
   return a % b;
   
 
