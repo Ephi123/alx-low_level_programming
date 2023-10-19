@@ -1,0 +1,10 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: dimgrey;
+}
+
+a:active {
+  background-color: red;
+  border: 1px solid white;
+}
